@@ -252,4 +252,78 @@ Asenkron işlemler, sırayla çalışmayan ve paralel olarak gerçekleşebilen i
 **20. Promise nedir ve neden ihtiyaç duyarız**
 Promise bir işlemin sonucunun olacağını temsil eden bir JavaScript objesidir. Eğer promise başarılı bir şekilde gerçekleşirse resolved değer döner, eğer işler ters giderse de reject olarak neden bu işlemin gerçekleşemediği döner. 
 Promise'ler callback hell gibi kod karmaşasına sebep olan, okunurluğu azaltan sorunlar sebebiyle ortaya çıkmıştır. 
-  
+
+
+## **Array Soruları**
+  ```javascript
+var dolap = ["Shirt", "Pant", "TShirt"];
+   ```
+**1. dolap arrayindeki son elemanı silip consola yazdırın**
+  ```javascript
+let lastElement = dolap.pop()
+console.log(lastElement)
+   ```
+**2. dolap arrayindeki ilk elamanı silip yerine “Hat” elemanını gönderip consola yazdırın**
+  ```javascript
+dolap.splice(0, 1, 'Hat')
+console.log(dolap[0])
+   ```
+**3. dolap değişkeninin array olup olmadığını kontrol edin ve sonucu bir değişkene eşitleyin**
+  ```javascript
+let isArray = Array.isArray(dolap)
+   ```
+**4. dolap arrayinde “Pant” elemanın olup olmadığını 3 farklı method ile kontrol edin**
+ ```javascript
+dolap.find((e) => e === 'Pant'))
+   ```
+   ```javascript
+dolap.findIndex((e) => e === 'Pant')
+   ```
+   ```javascript
+let pant = 'Pant'
+dolap.includes(pant)
+   ```
+
+**5. dolap arrayindeki elemanların karakter sayısını toplayıp geriye döndürecek fonksiyonu yazın**
+   ```javascript
+function sumOfElements(arr){
+    let sum = 0
+    for(let i=0;i<arr.length;i++){
+    sum += arr[i].length}
+    return sum;
+}
+let result = sumOfElements(dolap)
+   ```
+   
+**6.dolap arrayindki tüm elemanları büyük harfe çevirip yeni bir değişkene 3 farklı yöntemle atayın**
+Büyük harf yapmak için:
+   ```javascript
+dolap = dolap.map((e) =>
+{ return e.toUpperCase() })
+   ```
+   Tek bir string olarak değişkene atama:
+   ```javascript
+let text = dolap.join('')
+   ```
+   
+ ```javascript
+let text = '';
+for(let i=0;i<dolap.length;i++){
+    text += dolap[i]
+}
+   ```
+   
+   ```javascript
+let text = dolap.toString()
+.replaceAll(',', '')
+   ```
+
+**7.dolap arrayini index sayıları key olacak şekilde objeye çeviriniz**
+
+   ```javascript
+let obj = {}
+Object.assign(obj, dolap)
+   ```
+
+**8.slice ile splice farkı nedir**
+splice() orijinal array'in değerlerini değiştirerek ekleme, silme ve yer değiştirme işlemlerini yapar. Fakat slice() orijinal array'in bir kopyasını oluşturur.
