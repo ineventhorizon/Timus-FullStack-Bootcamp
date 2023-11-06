@@ -234,7 +234,7 @@ while(i < len){
     i++
 }
    ```
-**18. Cookie, local storage ve session storage farkını tablo yapınız **
+**18. Cookie, local storage ve session storage farkını tablo yapınız**
 
 | | Cookie| Local Storage| Session Storage|
 |--|--|--|--|
@@ -244,7 +244,7 @@ while(i < len){
 |  Depolama| Tarayıcı ve sunucu |Tarayıcı|Tarayıcı
 |  İstekte gönderme| Evet |Hayır|Hayır
 
-**19. Asenkron ve senkron işlem farkı nedir **
+**19. Asenkron ve senkron işlem farkı nedir**
 
 Senkron işlemler sırayla ve adım adım çalışan işlemlerdir. Bir işlem tamamlanmadan bir sonraki başlamaz. 
 Asenkron işlemler, sırayla çalışmayan ve paralel olarak gerçekleşebilen işlemlerdir. Bir işlem başladığında bitmesini beklemek zorunda değildir, bu sırada başka bir işlem de çalışabilir. Hangi işlem önce biterse onun sonucu daha önce gösterilir. 
