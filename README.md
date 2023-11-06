@@ -176,5 +176,80 @@ const {name, age} = example
 //Şeklinde destructuring yapılabilir.
    ```
 **16. 2 elemanlı bir objeyi 6 farklı şekilde oluşturunuz.**
+```javascript
+const example = { name: 'Yusuf', age:26}
+   ```
+   ```javascript
+const example = new Object()
+example.name = 'Yusuf'
+example.age = 26
+   ```
+   ```javascript
+const example = Object.create({})
+example.name = 'Yusuf'
+example.age = 26
+   ```
+   ```javascript
+let name = 'Yusuf'
+let age = 26
+const example = {name, age}
+   ```
+   ```javascript
+const example = {}
+example.name = 'Yusuf'
+example.age = 26
+   ```
+  ```javascript
+const obj1 = {name : 'Yusuf'}
+const obj2 = {age : 26}
+const example = Object.assign(obj1, obj2)
+   ```
 
---
+**17.  2 elemanlı bir objenin key ve value değerlerinin karakter sayısı ile 2 farklı döngü methodu kullanarak yeni bir obje oluşturunuz**
+
+  ```javascript
+const example = { name: 'Yusuf', age:26}
+
+var newObj = []
+let len = Object.entries(example).length
+
+for(let i=0;i<len;i++){
+    newObj.push(Object.keys(example[i].length)
+    newObj.push(Object.values(example)[i]
+    .toString()
+    .length)
+}
+   ```
+  ```javascript
+const example = { name: 'Yusuf', age:26}
+
+var newObj = []
+let len = Object.entries(example).length
+let i = 0
+while(i < len){
+    newObj.push(Object.keys(example)[i].length)
+    newObj.push(Object.values(example)[i]
+    .toString()
+    .length)
+    i++
+}
+   ```
+**18. Cookie, local storage ve session storage farkını tablo yapınız **
+
+| | Cookie| Local Storage| Session Storage|
+|--|--|--|--|
+|  Kapasite| 4kb |5-10Mb|5Mb
+|  Erişilebilirlik| Tüm pencereler |Tüm pencereler|Sekmeye özel
+|  Sona erme süresi| Manuel olarak ayarlanır |Hiçbir zaman sona ermez|Sekme kapatıldığında sona erer
+|  Depolama| Tarayıcı ve sunucu |Tarayıcı|Tarayıcı
+|  İstekte gönderme| Evet |Hayır|Hayır
+
+**19. Asenkron ve senkron işlem farkı nedir **
+
+Senkron işlemler sırayla ve adım adım çalışan işlemlerdir. Bir işlem tamamlanmadan bir sonraki başlamaz. 
+Asenkron işlemler, sırayla çalışmayan ve paralel olarak gerçekleşebilen işlemlerdir. Bir işlem başladığında bitmesini beklemek zorunda değildir, bu sırada başka bir işlem de çalışabilir. Hangi işlem önce biterse onun sonucu daha önce gösterilir. 
+
+**20. Promise nedir ve neden ihtiyaç duyarız**
+Promise bir işlemin sonucunun olacağını temsil eden bir JavaScript objesidir. Eğer promise başarılı bir şekilde gerçekleşirse resolved değer döner, eğer işler ters giderse de reject olarak neden bu işlemin gerçekleşemediği döner. 
+Promise'ler callback hell gibi kod karmaşasına sebep olan, okunurluğu azaltan sorunlar sebebiyle ortaya çıkmıştır. 
+  
