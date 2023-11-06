@@ -327,3 +327,59 @@ Object.assign(obj, dolap)
 
 **8.slice ile splice farkı nedir**
 splice() orijinal array'in değerlerini değiştirerek ekleme, silme ve yer değiştirme işlemlerini yapar. Fakat slice() orijinal array'in bir kopyasını oluşturur.
+
+## Array Soruları 2
+
+  ```javascript
+const arr = [1,2,3,4,5,6,7,7,8,6,10];
+   ```
+
+**1. arrayindeki yinelenen sayıları bulun**
+
+  ```javascript
+let recurringNumbers = arr.filter((item,index) => 
+{return arr.indexOf(item) !== index})
+   ```
+
+**2. arrayindeki tüm yinelenen sayıları silip yeni bir arrayi 2 farklı method ile oluşturun**
+
+  ```javascript
+let newArr = arr.filter((item, index) => {
+  return arr.indexOf(item) == index
+})
+   ```
+```javascript
+let newArr = []
+for(let i=0;i<arr.length;i++){
+    if(!newArr.includes(arr[i])) newArr.push(arr[i])
+}
+   ```
+
+**3. arrayindeki en yüksek ve en düşük değeri 2 farklı methodla bulun**
+En yüksek değer:
+```javascript
+const highest = arr.sort((a, b) => b - a)[0]
+   ```
+```javascript
+var max = Math.max(...arr)
+   ```
+En düşük değer:
+```javascript
+const lowest = arr.sort((a, b) => a - b)[0]
+   ```
+```javascript
+var min = Math.min(...arr)
+   ```
+
+
+
+## Promise soruları
+
+**1. Soru**
+
+Çıktısı 
+Error1 ve Success 4'tür. Çünkü ilk verilen job promise'ı reject dönecektir. O yüzden catch'ten öncekileri yok sayıp Error 1 yazdıracak, rejectden sonra da Success 4 yazdırılacaktır.
+
+**2. Soru**
+
+--
